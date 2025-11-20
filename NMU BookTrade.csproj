@@ -1,0 +1,458 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.Net.Compilers.4.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('packages\Microsoft.Net.Compilers.4.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{52228832-AB46-4982-A3E2-07EF9E19A6BC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NMU_BookTrade</RootNamespace>
+    <AssemblyName>NMU BookTrade</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44381</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\net461\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\GraceModule\AdminDashboard.aspx" />
+    <Content Include="Admin\GraceModule\AdminProfile.aspx" />
+    <Content Include="Admin\GraceModule\AssignDriver.aspx" />
+    <Content Include="Admin\GraceModule\AddDriver.aspx" />
+    <Content Include="Admin\GraceModule\Inbox.aspx" />
+    <Content Include="Admin\GraceModule\ManageCategories.aspx" />
+    <Content Include="Admin\GraceModule\ManageGenres.aspx" />
+    <Content Include="Admin\GraceModule\ManageReviews.aspx" />
+    <Content Include="Admin\GraceModule\ViewDriver.aspx" />
+    <Content Include="Buyer\pabiModule\BuyerOrders.aspx" />
+    <Content Include="Buyer\pabiModule\BuyerDashboard.aspx" />
+    <Content Include="Buyer\pabiModule\BuyerProfile.aspx" />
+    <Content Include="Buyer\pabiModule\Cart.aspx" />
+    <Content Include="Buyer\pabiModule\Reviews.aspx" />
+    <Content Include="Driver\ClintonModule\DriverDashboard.aspx" />
+    <Content Include="Driver\ClintonModule\DriverProfile.aspx" />
+    <Content Include="Driver\ClintonModule\ManageDeliveries.aspx" />
+    <Content Include="Driver\ClintonModule\ViewSchedule.aspx" />
+    <Content Include="Images\1984.jpeg" />
+    <Content Include="Images\accounting.jpg" />
+    <Content Include="Images\BookImage.png" />
+    <Content Include="Images\clint.jpg" />
+    <Content Include="Images\commercial law.jpg" />
+    <Content Include="Images\database.png" />
+    <Content Include="Images\design_patterns.jpeg" />
+    <Content Include="Images\getintouchperson.png" />
+    <Content Include="Images\goodbye.png" />
+    <Content Include="Images\grace.png" />
+    <Content Include="Images\guide.png" />
+    <Content Include="Images\Image1.png" />
+    <Content Include="Images\Image2.png" />
+    <Content Include="Images\IS.png" />
+    <Content Include="Images\Letter.gif" />
+    <Content Include="Images\map.png" />
+    <Content Include="Images\NMUBOOKTRADE.png" />
+    <Content Include="Images\No-orders.jpg" />
+    <Content Include="Images\pabi.jpeg" />
+    <Content Include="Images\Person reading.png" />
+    <Content Include="Buyer\pabiModule\SearchTextBook.aspx" />
+    <Content Include="Images\Ratings.jpg" />
+    <Content Include="Images\textbook240 .png" />
+    <Content Include="Images\textbook241.png" />
+    <Content Include="Images\textbook242.png" />
+    <Content Include="Images\textbook244.png" />
+    <Content Include="Images\User.png" />
+    <Content Include="Buyer\pabiModule\SearchResult.aspx" />
+    <Content Include="Buyer\pabiModule\Reviews.aspx" />
+    <Content Include="Seller\ClintonModule\CreateListings.aspx" />
+    <Content Include="Seller\ClintonModule\ManageListings.aspx" />
+    <Content Include="Seller\ClintonModule\SellerDashboard.aspx" />
+    <Content Include="Seller\ClintonModule\SellerProfile.aspx" />
+    <Content Include="StyleSheet1.css" />
+    <Content Include="UserManagement\AboutUs.aspx" />
+    <Content Include="UserManagement\AccessDenied.aspx" />
+    <Content Include="UserManagement\BookConditions.aspx" />
+    <Content Include="UserManagement\Contact.aspx" />
+    <Content Include="UserManagement\ForgotPassword.aspx" />
+    <Content Include="UserManagement\Home.aspx" />
+    <Content Include="UserManagement\Login.aspx" />
+    <Content Include="UserManagement\LogOut.aspx" />
+    <Content Include="UserManagement\Register.aspx" />
+    <Content Include="UserManagement\ResetPassword.aspx" />
+    <Content Include="Buyer\pabiModule\ViewTextBookDetails.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\GraceModule\AdminDashboard.aspx.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GraceModule\AdminDashboard.aspx.designer.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GraceModule\AdminProfile.aspx.cs">
+      <DependentUpon>AdminProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GraceModule\AdminProfile.aspx.designer.cs">
+      <DependentUpon>AdminProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GraceModule\AssignDriver.aspx.cs">
+      <DependentUpon>AssignDriver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GraceModule\AssignDriver.aspx.designer.cs">
+      <DependentUpon>AssignDriver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GraceModule\AddDriver.aspx.cs">
+      <DependentUpon>AddDriver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GraceModule\AddDriver.aspx.designer.cs">
+      <DependentUpon>AddDriver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GraceModule\Inbox.aspx.cs">
+      <DependentUpon>Inbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GraceModule\Inbox.aspx.designer.cs">
+      <DependentUpon>Inbox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GraceModule\ManageCategories.aspx.cs">
+      <DependentUpon>ManageCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GraceModule\ManageCategories.aspx.designer.cs">
+      <DependentUpon>ManageCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GraceModule\ManageGenres.aspx.cs">
+      <DependentUpon>ManageGenres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GraceModule\ManageGenres.aspx.designer.cs">
+      <DependentUpon>ManageGenres.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GraceModule\ManageReviews.aspx.cs">
+      <DependentUpon>ManageReviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GraceModule\ManageReviews.aspx.designer.cs">
+      <DependentUpon>ManageReviews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GraceModule\ViewDriver.aspx.cs">
+      <DependentUpon>ViewDriver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GraceModule\ViewDriver.aspx.designer.cs">
+      <DependentUpon>ViewDriver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationHelper.cs" />
+    <Compile Include="Buyer\pabiModule\BuyerOrders.aspx.cs">
+      <DependentUpon>BuyerOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\BuyerOrders.aspx.designer.cs">
+      <DependentUpon>BuyerOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\BuyerDashboard.aspx.cs">
+      <DependentUpon>BuyerDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\BuyerDashboard.aspx.designer.cs">
+      <DependentUpon>BuyerDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\BuyerProfile.aspx.cs">
+      <DependentUpon>BuyerProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\BuyerProfile.aspx.designer.cs">
+      <DependentUpon>BuyerProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\Reviews.aspx.cs">
+      <DependentUpon>Reviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Driver\ClintonModule\DriverDashboard.aspx.cs">
+      <DependentUpon>DriverDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Driver\ClintonModule\DriverDashboard.aspx.designer.cs">
+      <DependentUpon>DriverDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Driver\ClintonModule\DriverProfile.aspx.cs">
+      <DependentUpon>DriverProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Driver\ClintonModule\DriverProfile.aspx.designer.cs">
+      <DependentUpon>DriverProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Driver\ClintonModule\ManageDeliveries.aspx.cs">
+      <DependentUpon>ManageDeliveries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Driver\ClintonModule\ManageDeliveries.aspx.designer.cs">
+      <DependentUpon>ManageDeliveries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Driver\ClintonModule\ViewSchedule.aspx.cs">
+      <DependentUpon>ViewSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Driver\ClintonModule\ViewSchedule.aspx.designer.cs">
+      <DependentUpon>ViewSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Buyer\pabiModule\SearchTextBook.aspx.cs">
+      <DependentUpon>SearchTextBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\SearchTextBook.aspx.designer.cs">
+      <DependentUpon>SearchTextBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\SearchResult.aspx.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\SearchResult.aspx.designer.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\Reviews.aspx.cs">
+      <DependentUpon>Reviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\Reviews.aspx.designer.cs">
+      <DependentUpon>Reviews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seller\ClintonModule\CreateListings.aspx.cs">
+      <DependentUpon>CreateListings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seller\ClintonModule\CreateListings.aspx.designer.cs">
+      <DependentUpon>CreateListings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seller\ClintonModule\ManageListings.aspx.cs">
+      <DependentUpon>ManageListings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seller\ClintonModule\ManageListings.aspx.designer.cs">
+      <DependentUpon>ManageListings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seller\ClintonModule\SellerDashboard.aspx.cs">
+      <DependentUpon>SellerDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seller\ClintonModule\SellerDashboard.aspx.designer.cs">
+      <DependentUpon>SellerDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seller\ClintonModule\SellerProfile.aspx.cs">
+      <DependentUpon>SellerProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seller\ClintonModule\SellerProfile.aspx.designer.cs">
+      <DependentUpon>SellerProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\AccessDenied.aspx.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\AccessDenied.aspx.designer.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\BookConditions.aspx.cs">
+      <DependentUpon>BookConditions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\BookConditions.aspx.designer.cs">
+      <DependentUpon>BookConditions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\ViewTextBookDetails.aspx.cs">
+      <DependentUpon>ViewTextBookDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyer\pabiModule\ViewTextBookDetails.aspx.designer.cs">
+      <DependentUpon>ViewTextBookDetails.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site1.Master" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UploadedImages\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53878</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44381/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <UseRoslyn>true</UseRoslyn>
+  </PropertyGroup>
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.Net.Compilers.4.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Net.Compilers.4.1.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+</Project>

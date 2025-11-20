@@ -1,0 +1,210 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="NMU_BookTrade.Site1" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+  <link href="~/StyleSheet1.css" rel="stylesheet" type="text/css" />
+   
+
+
+    <title>NMU BookTrade</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- Font Awesome CDN (latest version) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+
+
+   
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true" />
+
+        <!-- Navigation Header -->
+        <nav class="header">
+    <!-- Logo -->
+    <div class="logo-container">
+       <asp:HyperLink 
+            ID="hlLogo" 
+            runat="server" 
+            NavigateUrl="~/UserManagement/Home.aspx">
+          <asp:Image 
+              ID="imgLogo" 
+              runat="server" 
+              CssClass="logo"
+              ImageUrl="~/Images/NMUBOOKTRADE.png"
+              AlternateText="NMU BookTrade Logo"/>
+</asp:HyperLink>
+
+    </div>
+
+    <!-- Menus -->
+    <asp:Menu ID="MenuDriver" runat="server" Orientation="Horizontal" CssClass="nav" RenderingMode="List">
+        <Items>
+            <asp:MenuItem Text="Home" NavigateUrl="~/Driver/ClintonModule/DriverDashboard.aspx"/>
+            <asp:MenuItem Text="Manage Deliveries" NavigateUrl="~/Driver/ClintonModule/ManageDeliveries.aspx"/>
+            <asp:MenuItem Text="View Schedule" NavigateUrl="~/Driver/ClintonModule/ViewSchedule.aspx"/>
+            <asp:MenuItem Text="Contact Us" NavigateUrl="~/UserManagement/Contact.aspx"/>
+            
+        </Items>
+        <StaticMenuItemStyle CssClass="menu-link" HorizontalPadding="30px"/>
+    </asp:Menu>
+
+
+
+    <asp:Menu ID="MenuSeller" runat="server" Orientation="Horizontal" CssClass="nav" RenderingMode="List">
+        <Items>
+            <asp:MenuItem Text="Home" NavigateUrl="~/Seller/ClintonModule/SellerDashboard.aspx"/>
+            <asp:MenuItem Text="Create Listings" NavigateUrl="~/Seller/ClintonModule/CreateListings.aspx"/>
+            <asp:MenuItem Text="Manage Listings" NavigateUrl="~/Seller/ClintonModule/ManageListings.aspx"/>
+            <asp:MenuItem Text="Contact" NavigateUrl="~/UserManagement/Contact.aspx"/>
+            
+        </Items>
+        <StaticMenuItemStyle CssClass="menu-link" HorizontalPadding="30px"/>
+    </asp:Menu>
+
+    <asp:Menu ID="MenuAdmin" runat="server" Orientation="Horizontal" CssClass="nav" RenderingMode="List">
+        <Items>
+            <asp:MenuItem Text="Dashboard" NavigateUrl="~/Admin/GraceModule/AdminDashboard.aspx"/>
+            <asp:MenuItem Text="Assign Driver" NavigateUrl="~/Admin/GraceModule/AssignDriver.aspx"/>
+            <asp:MenuItem Text="Inbox" NavigateUrl="~/Admin/GraceModule/Inbox.aspx"/>           
+            <asp:MenuItem Text="Manage Categories" NavigateUrl="~/Admin/GraceModule/ManageCategories.aspx"/>
+            <asp:MenuItem Text="Manage Genres" NavigateUrl="~/Admin/GraceModule/ManageGenres.aspx"/>
+        </Items>
+        <StaticMenuItemStyle CssClass="menu-link" HorizontalPadding="30px"/>
+    </asp:Menu>
+
+    <asp:Menu ID="MenuBuyer" runat="server" Orientation="Horizontal" CssClass="nav" RenderingMode="List">
+        <Items>
+            <asp:MenuItem Text="Home" NavigateUrl="~/Buyer/pabiModule/BuyerDashboard.aspx"/>
+            <asp:MenuItem Text="About Us" NavigateUrl="~/UserManagement/AboutUs.aspx"/>
+            <asp:MenuItem Text="Book Conditions" NavigateUrl="~/UserManagement/BookConditions.aspx"/>
+            <asp:MenuItem Text="Reviews" NavigateUrl="~/Buyer/pabiModule/Reviews.aspx"/>
+            <asp:MenuItem Text="Contact Us" NavigateUrl="~/UserManagement/Contact.aspx"/>
+            
+        </Items>
+        <StaticMenuItemStyle CssClass="menu-link" HorizontalPadding="30px"/>
+    </asp:Menu>
+
+    <asp:Menu ID="MenuAnonymous" runat="server" Orientation="Horizontal" CssClass="nav" RenderingMode="List">
+        <Items>
+        <asp:MenuItem Text="Home" NavigateUrl="~/UserManagement/Home.aspx"/>
+        <asp:MenuItem Text="About Us" NavigateUrl="~/UserManagement/AboutUs.aspx"/>
+        <asp:MenuItem Text="Book Conditions" NavigateUrl="~/UserManagement/BookConditions.aspx"/>
+        <asp:MenuItem Text="Contact" NavigateUrl="~/UserManagement/Contact.aspx"/>
+
+        </Items>
+        <StaticMenuItemStyle CssClass="menu-link" HorizontalPadding="30px"/>
+    </asp:Menu>
+
+             <!-- Dynamic Profile Picture Panel -->
+<asp:Panel ID="pnlProfileImage" runat="server" CssClass="top-profile-pic">
+
+ <asp:HyperLink ID="hlDynamicProfile" runat="server">
+    <asp:Image ID="imgProfile" runat="server" CssClass="profile-circle" />
+</asp:HyperLink>
+
+
+
+            </asp:Panel>
+
+    <!-- Auth section: Right side -->
+    <div id="divAuthenticated_Buyer" runat="server" class="auth-section">
+     <div id="divSearchBar" runat="server" class="auth-left">
+     <!--  <input type="text" class="search-bar" placeholder="Search for book title" />
+     <button class="search-btn">🔍</button> -->
+ </div>
+        <asp:HyperLink ID="hlCart" runat="server" NavigateUrl="~/Buyer/pabiModule/Cart.aspx" CssClass="cart-link">
+            <asp:UpdatePanel  ID="updCartBadge" runat="server" UpdateMode="Conditional">
+    <ContentTemplate>
+        <asp:Label ID="lblCartCount" runat="server" CssClass="cart-badge" Text="0"></asp:Label>
+    </ContentTemplate>
+</asp:UpdatePanel>
+            <i class="fas fa-shopping-cart"></i>
+        </asp:HyperLink>
+
+        <asp:HyperLink ID="hlBuyerProfile" runat="server" NavigateUrl="~/Buyer/pabiModule/BuyerProfile.aspx" CssClass="btn">Profile</asp:HyperLink>
+                <asp:HyperLink ID="hlOrders" runat="server" NavigateUrl="~/Buyer/pabiModule/BuyerOrders.aspx" CssClass="btn">Orders</asp:HyperLink>
+<asp:Button ID="btnLogout" CssClass="btn" runat="server" Text="LogOut" PostBackUrl="~/UserManagement/LogOut.aspx" CausesValidation="false"/>
+    </div>
+
+    <div id="divAnonymous" runat="server" class="auth-section">
+        <asp:Button ID="LogInbtn" CssClass="btn" runat="server" Text="Login" OnClick="btnLogIn_Click" CausesValidation="false"/>
+        <asp:Button ID="Regbtn" CssClass="btn" runat="server" Text="Register" OnClick="btnRegister_Click" CausesValidation="false"/>
+    </div>
+
+    <div id="divAuthenticated_driver" runat="server" class="auth-section">
+        
+       <asp:HyperLink ID="hlDriverProfile" runat="server" NavigateUrl="~/Driver/ClintonModule/DriverProfile.aspx" CssClass="btn">Profile</asp:HyperLink>
+
+<asp:Button ID="btnLogout2" CssClass="btn" runat="server" Text="LogOut" PostBackUrl="~/UserManagement/LogOut.aspx" CausesValidation="false"/>
+    </div>
+
+    <div id="divAuthenticator_seller" runat="server" class="auth-section">
+     
+         <asp:HyperLink ID="hlSellerProfile" runat="server" NavigateUrl="~/Seller/ClintonModule/SellerProfile.aspx" CssClass="btn">Profile</asp:HyperLink>
+        
+<asp:Button ID="btnLogout3" CssClass="btn" runat="server" Text="LogOut" PostBackUrl="~/UserManagement/LogOut.aspx" CausesValidation="false"/>
+
+        <br />
+        <br />
+        <br />
+    </div>
+
+    <div id="divAuthenticator_Admin" runat="server" class="auth-section">
+     
+         <asp:HyperLink ID="hlAdminProfile" runat="server" NavigateUrl="~/Admin/GraceModule/AdminProfile.aspx" CssClass="btn">Profile</asp:HyperLink>
+
+<asp:Button ID="btnLogout4" CssClass="btn" runat="server" Text="LogOut" PostBackUrl="~/UserManagement/LogOut.aspx" CausesValidation="false"/>
+    </div>
+
+
+</nav>
+
+
+        <!-- Main Content -->
+        <main class="MainContainer">
+            <div class="middle-section">
+                <asp:ContentPlaceHolder ID="middle_section" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </main>
+
+    </form>
+
+
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="footer-logo">
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/NMUBOOKTRADE.png" />
+        <br />
+        <strong>NMU<br /><span>BookTrade</span></strong>
+        <p>Thanks for choosing us!</p>
+    </div>
+
+    <div class="footer-links">
+        <div>
+            <h4>Company</h4>
+            <asp:HyperLink ID="hlFooterHome" runat="server" Text="Home" /><br />
+            <asp:HyperLink ID="hlFooterAbout" runat="server" Text="About" /><br />
+            <asp:HyperLink ID="hlFooterConditions" runat="server" Text="Book Conditions" /><br />
+            <asp:HyperLink ID="hlFooterContact" runat="server" Text="Contact Support" />
+        </div>
+
+        <div>
+            <h4>Documentation</h4>
+            <asp:HyperLink ID="hlFooterFAQ" runat="server" Text="FAQ" /><br />
+            <asp:HyperLink ID="hlFooterPrivacy" runat="server" Text="Privacy Policy" />
+        </div>
+
+        <div>
+            <h4>Social</h4>
+            <asp:HyperLink ID="hlFooterWhatsApp" runat="server" Text="WhatsApp" />
+        </div>
+    </div>
+</footer>
+</body>
+</html>
